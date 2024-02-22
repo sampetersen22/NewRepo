@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Spice Jet(failed)">
+    <classes>
+      <class name="pages.SJValidationMethods">
+        <methods>
+          <include name="incrtlogin"/>
+          <include name="beforesuite"/>
+          <include name="lastmethod"/>
+          <include name="forgotpswd"/>
+          <include name="firstmethod"/>
+          <include name="logindetails"/>
+        </methods>
+      </class> <!-- pages.SJValidationMethods -->
+      <class name="pages.SJBookingpage">
+        <methods>
+          <include name="lastmethod"/>
+          <include name="beforesuite"/>
+          <include name="firstmethod"/>
+          <include name="logindetails"/>
+        </methods>
+      </class> <!-- pages.SJBookingpage -->
+    </classes>
+  </test> <!-- Spice Jet(failed) -->
+  <test thread-count="5" name="Best Buy(failed)">
+    <classes>
+      <class name="pages.BBValidationMethods">
+        <methods>
+          <include name="firstmethod"/>
+          <include name="zipcode"/>
+          <include name="lastmethod"/>
+          <include name="incrtlogin"/>
+          <include name="logindetails"/>
+          <include name="beforesuite"/>
+        </methods>
+      </class> <!-- pages.BBValidationMethods -->
+      <class name="pages.BBloginpage">
+        <methods>
+          <include name="firstmethod"/>
+          <include name="lastmethod"/>
+          <include name="logindetails"/>
+          <include name="beforesuite"/>
+        </methods>
+      </class> <!-- pages.BBloginpage -->
+    </classes>
+  </test> <!-- Best Buy(failed) -->
+</suite> <!-- Failed suite [Suite] -->
