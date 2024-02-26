@@ -5,8 +5,8 @@
     <classes>
       <class name="pages.SJBookingpage">
         <methods>
-          <include name="lastmethod"/>
           <include name="beforesuite"/>
+          <include name="lastmethod"/>
           <include name="firstmethod"/>
           <include name="logindetails"/>
         </methods>

@@ -22,11 +22,11 @@ public class SJBookingpage extends SJpageMethods {
 	@FindBy(xpath="//body//div[@id='react-root']//div[@data-testid='application-id']//div//div//div[5]//div[3]")
 	WebElement clicklogin;
 	@FindBy(xpath="//body//div[@id='react-root']//div[@data-testid='application-id']//div//div//div[5]//div[2]//div[1]//div[2]//div[2]")
-	WebElement cred1;
+	WebElement date;
 	@FindBy(xpath="//div[contains(text(),'USD')]")
 	WebElement currency;
 	@FindBy(xpath="(//div)[291]")
-	WebElement cred3;
+	WebElement numberpass;
 	@FindBy(xpath="(//div[@data-focusable='true'])[20]")
 	WebElement cred4;
 	@FindBy(xpath="//div[contains(text(),'From')]")
@@ -45,22 +45,22 @@ public class SJBookingpage extends SJpageMethods {
 	WebElement cred11;
 	@FindBy(xpath="//input[@data-testid='traveller-0-last-traveller-info-input-box']")
 	WebElement cred12;
-	@FindBy(xpath="(//div[@data-focusable='true'])[13]")
+	@FindBy(xpath="(//div[contains(text(),'Next')])[1]")
 	WebElement cred13;
 	@FindBy(xpath="//input[@data-testid='traveller-1-first-traveller-info-input-box']")
 	WebElement cred14;
 	@FindBy(xpath="//input[@data-testid='traveller-1-last-traveller-info-input-box']")
 	WebElement cred15;
-	@FindBy(xpath="(//div[@data-focusable='true'])[15]")
+	@FindBy(xpath="(//div[@data-focusable='true'])[17]")
 	WebElement cred16;
-	@FindBy(xpath="//div[@datla-testid='blueRibbonBag']//div[@data-testid='expandableList']//div[@aria-disabled='true']//div//div[@data-testid='expandableList-header']//div//div[@data-focusable='true']")
+	@FindBy(xpath="//body/div[@id='react-root']/div[@id='main-container']/div[@data-testid='application-id']/div/div/div/div/div[4]/div[1]/div[1]")
 	WebElement cred17;
-	@FindBy(xpath="(//div[@dir='auto'][normalize-space()='BLR - DEL'])[1]")
-	WebElement cred18;
-	@FindBy(xpath="(//div[contains(text(),'Done')])[1]")
-	WebElement cred19;
-	@FindBy(xpath="//*[@id=\'main-container\']/div/div[5]/div/div/div[2]/div/div/div[4]")
-	WebElement cred20;
+	//@FindBy(xpath="(//div[@dir='auto'][normalize-space()='BLR - DEL'])[1]")
+	//WebElement cred18;
+	//@FindBy(xpath="(//div[contains(text(),'Done')])[1]")
+	//WebElement cred19;
+	//@FindBy(xpath="//*[@id=\'main-container\']/div/div[5]/div/div/div[2]/div/div/div[4]")
+	//WebElement cred20;
 
 	@Test
 	public void logindetails() throws InterruptedException {
@@ -80,10 +80,11 @@ public class SJBookingpage extends SJpageMethods {
 			e.printStackTrace();
 		}  Thread.sleep(5000);
 
-		cred1.click();
+		date.click();
 		currency.click();
-		cred3.click();
 		test.log(Status.PASS, "Currency selected");
+		numberpass.click();
+		test.log(Status.PASS, "Passengers Selected");
 		cred4.click();
 		oneway.click();
 		from_place.click();
@@ -92,7 +93,7 @@ public class SJBookingpage extends SJpageMethods {
 		cred8.click(); Thread.sleep(4000);
 		cred9.click(); Thread.sleep(8000);
 		test.log(Status.PASS, "Passenger details given successfully");
-		cred10.click(); Thread.sleep(4000);
+		cred10.click(); Thread.sleep(8000);
 		cred11.sendKeys("KUMAR");
 		cred12.sendKeys("M");
 		test.log(Status.PASS, "Passenger 1 details given");
@@ -103,9 +104,9 @@ public class SJBookingpage extends SJpageMethods {
 		cred16.click(); Thread.sleep(5000);
 		test.log(Status.PASS, "Cost of tickets");
 		cred17.click();
-		cred18.click();
-		cred19.click();
-		cred20.click();
+		//cred18.click();
+	//	cred19.click();
+		//cred20.click();
 		// TODO Auto-generated catch block
 
 		//searchBtn.click();
