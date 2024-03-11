@@ -71,8 +71,8 @@ public class BBloginpage extends BBpagemethods {
 	
 	
 	
-	@Test
-	public void logindetails() throws InterruptedException {
+	@Test(dataProvider = "exceldataOne")
+	public void logindetails(String Email, String Mobile) throws InterruptedException {
 		PageFactory.initElements(driver, this);
 
 		menu.click();
@@ -103,9 +103,9 @@ public class BBloginpage extends BBpagemethods {
 		test.log(Status.PASS, "Checkout");
 		guest.click();
 		test.log(Status.PASS, "Continuing as guest");
-		email.sendKeys("123@gmail.com");
+		email.sendKeys(Email);
 		test.log(Status.PASS, "Email ID entered");
-		phone.sendKeys("347 689 2340");
+		phone.sendKeys(Mobile);
 		test.log(Status.PASS, "Mobile no. entered");
 		payment.click();
 				

@@ -1,8 +1,19 @@
 package pages;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -62,15 +73,17 @@ public class SJBookingpage extends SJpageMethods {
 	//@FindBy(xpath="//*[@id=\'main-container\']/div/div[5]/div/div/div[2]/div/div/div[4]")
 	//WebElement cred20;
 
-	@Test
-	public void logindetails() throws InterruptedException {
+	
+	@Test(dataProvider = "exceldata")
+	public void logindetails(String Username, String Password) throws InterruptedException {
+		
 		PageFactory.initElements(driver, this);
 		//WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(10));
 		//WebElement element = wait.until(ExpectedConditions.elementToBeClickable(loginBtn));
 		loginBtn.click();
 		Thread.sleep(5000);
-		number.sendKeys("8667500480");
-		pswd.sendKeys("Maxval123#");
+		number.sendKeys(Username);
+		pswd.sendKeys(Password);
 		try {
 			clicklogin.click();
 			test.log(Status.PASS, "Login successfully");
@@ -111,5 +124,6 @@ public class SJBookingpage extends SJpageMethods {
 
 		//searchBtn.click();
 	}
+
 
 }

@@ -1,9 +1,13 @@
 package engine;
 
+import java.io.IOException;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.DataProvider;
 
+import Utility.DataDriven;
 import Utility.SpiceJet;
 
 public class SJpageMethods extends SpiceJet{
@@ -18,6 +22,12 @@ public class SJpageMethods extends SpiceJet{
 		test = reports.createTest("Testcase");
 		browsers(); Thread.sleep(5000);
 		urlpage(); Thread.sleep(5000);
+	}
+	
+	@DataProvider
+	public String[][] exceldata() throws IOException {
+	String[][] data1=	DataDriven.readExcel(); 
+		return data1;
 	}
 	
 	@AfterMethod
