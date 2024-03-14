@@ -27,16 +27,15 @@ public class BestBuy {
 		reports.flush();
 	}
 
-		
-		public void browsers() {
-			
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
-			
-			driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-			test.log(Status.PASS, "Chrome is launched");
-		}
+	public void browsers() {
+
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		test.log(Status.PASS, "Chrome is launched");
+	}
 	public void urlpage()
 	{
 		driver.get("https://www.bestbuy.com/?intl=nosplash");

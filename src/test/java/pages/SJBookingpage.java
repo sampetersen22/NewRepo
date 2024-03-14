@@ -19,7 +19,7 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.Status;
 
-import engine.SJpageMethods;
+import library.SJpageMethods;
 
 public class SJBookingpage extends SJpageMethods {
 	ExtentReports extent;
@@ -39,7 +39,7 @@ public class SJBookingpage extends SJpageMethods {
 	@FindBy(xpath="(//div)[291]")
 	WebElement numberpass;
 	@FindBy(xpath="(//div[@data-focusable='true'])[20]")
-	WebElement cred4;
+	WebElement passadded;
 	@FindBy(xpath="//div[contains(text(),'From')]")
 	WebElement oneway;
 	@FindBy(xpath="//div[normalize-space()='Kempegowda International Airport']")
@@ -47,41 +47,36 @@ public class SJBookingpage extends SJpageMethods {
 	@FindBy(xpath="//div[normalize-space()='Indira Gandhi International Airport']")
 	WebElement to_place;
 	@FindBy(xpath="(//div)[483]")
-	WebElement cred8;
+	WebElement dateselected;
 	@FindBy(xpath="(//div[@data-focusable='true'])[27]")
-	WebElement cred9;
+	WebElement searchflight;
 	@FindBy(xpath="//body[1]/div[2]/div[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[3]/div[2]")
-	WebElement cred10;
+	WebElement infogiven;
 	@FindBy(xpath="//input[@data-testid='traveller-0-first-traveller-info-input-box']")
-	WebElement cred11;
+	WebElement pass1info;
 	@FindBy(xpath="//input[@data-testid='traveller-0-last-traveller-info-input-box']")
-	WebElement cred12;
+	WebElement pass1infoname;
 	@FindBy(xpath="(//div[contains(text(),'Next')])[1]")
-	WebElement cred13;
+	WebElement selectnext;
 	@FindBy(xpath="//input[@data-testid='traveller-1-first-traveller-info-input-box']")
-	WebElement cred14;
+	WebElement pass2info;
 	@FindBy(xpath="//input[@data-testid='traveller-1-last-traveller-info-input-box']")
-	WebElement cred15;
+	WebElement pass2infoname;
 	@FindBy(xpath="(//div[@data-focusable='true'])[17]")
-	WebElement cred16;
+	WebElement validated;
 	@FindBy(xpath="//body/div[@id='react-root']/div[@id='main-container']/div[@data-testid='application-id']/div/div/div/div/div[4]/div[1]/div[1]")
-	WebElement cred17;
-	//@FindBy(xpath="(//div[@dir='auto'][normalize-space()='BLR - DEL'])[1]")
-	//WebElement cred18;
-	//@FindBy(xpath="(//div[contains(text(),'Done')])[1]")
-	//WebElement cred19;
-	//@FindBy(xpath="//*[@id=\'main-container\']/div/div[5]/div/div/div[2]/div/div/div[4]")
-	//WebElement cred20;
+	WebElement payment;
 
-	
+
+
 	@Test(dataProvider = "exceldata")
 	public void logindetails(String Username, String Password) throws InterruptedException {
-		
+
 		PageFactory.initElements(driver, this);
-		//WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(10));
-		//WebElement element = wait.until(ExpectedConditions.elementToBeClickable(loginBtn));
+
 		loginBtn.click();
 		Thread.sleep(5000);
+		
 		number.sendKeys(Username);
 		pswd.sendKeys(Password);
 		try {
@@ -89,40 +84,41 @@ public class SJBookingpage extends SJpageMethods {
 			test.log(Status.PASS, "Login successfully");
 		} catch (Exception e) {
 			test.log(Status.FAIL, "Login failed");
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}  Thread.sleep(5000);
 
 		date.click();
 		currency.click();
 		test.log(Status.PASS, "Currency selected");
+		
 		numberpass.click();
 		test.log(Status.PASS, "Passengers Selected");
-		cred4.click();
+		
+		passadded.click();
 		oneway.click();
 		from_place.click();
 		to_place.click();
 		test.log(Status.PASS, "From & to destination selected");
-		cred8.click(); Thread.sleep(4000);
-		cred9.click(); Thread.sleep(8000);
+		
+		dateselected.click(); Thread.sleep(4000);
+		searchflight.click(); Thread.sleep(8000);
 		test.log(Status.PASS, "Passenger details given successfully");
-		cred10.click(); Thread.sleep(8000);
-		cred11.sendKeys("KUMAR");
-		cred12.sendKeys("M");
+		
+		infogiven.click(); Thread.sleep(8000);
+		pass1info.sendKeys("KUMAR");
+		pass1infoname.sendKeys("M");
 		test.log(Status.PASS, "Passenger 1 details given");
-		cred13.click();
-		cred14.sendKeys("PREM");
-		cred15.sendKeys("M");
+		
+		selectnext.click();
+		pass2info.sendKeys("PREM");
+		pass2infoname.sendKeys("M");
 		test.log(Status.PASS, "Passenger 2 details given");
-		cred16.click(); Thread.sleep(5000);
+		
+		validated.click(); Thread.sleep(5000);
 		test.log(Status.PASS, "Cost of tickets");
-		cred17.click();
-		//cred18.click();
-	//	cred19.click();
-		//cred20.click();
-		// TODO Auto-generated catch block
+		payment.click();
 
-		//searchBtn.click();
 	}
 
 

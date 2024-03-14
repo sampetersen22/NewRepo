@@ -1,4 +1,4 @@
-package engine;
+package library;
 
 import java.io.IOException;
 
@@ -12,26 +12,29 @@ import Utility.DataDriven;
 import Utility.DataDrivenTwo;
 
 public class BBpagemethods extends BestBuy {
+
 	@BeforeSuite
 	public void beforesuite() {
 		startReport();
 	}
-	
+
 	@BeforeMethod
 	public void firstmethod() throws InterruptedException {
 		test = reports.createTest("Testcase");
 		browsers(); Thread.sleep(5000);
 		urlpage(); Thread.sleep(5000);
 	}
+
 	@DataProvider
 	public String[][] exceldataOne() throws IOException {
-	String[][] data2=	DataDrivenTwo.readExcelTwo(); 
+		String[][] data2  =	DataDrivenTwo.readExcelTwo(); 
 		return data2;
 	}
+
 	@AfterMethod
-  public void lastmethod() {
-	//closepage();
-	stopReport();
-}
+	public void lastmethod() {
+		//closepage();
+		stopReport();
+	}
 
 }

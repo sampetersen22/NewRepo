@@ -8,69 +8,69 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.Status;
 
-import engine.BBpagemethods;
+import library.BBpagemethods;
 
 public class BBloginpage extends BBpagemethods {
-	
+
 	ExtentReports extent;
-	
+
 	@FindBy(xpath="//button[normalize-space()='Menu']")
 	WebElement menu;
-	
+
 	@FindBy(xpath="//button[normalize-space()='TV & Home Theater']")
 	WebElement tvmenu;
-	
+
 	@FindBy(xpath="//button[normalize-space()='TVs by Size']")
 	WebElement tvsize;
-	
+
 	@FindBy(xpath="//a[normalize-space()='75-Inch TVs']")
 	WebElement tvinch;
-	
+
 	@FindBy(xpath="(//button[@type='button'][normalize-space()='Add to Cart'])[1]")
 	WebElement tvcart;
-	
+
 	@FindBy(xpath="//button[normalize-space()='Continue shopping']")
 	WebElement shopping;
-	
+
 	@FindBy(xpath="//button[normalize-space()='Menu']")
 	WebElement menu02;
-	
+
 	@FindBy(xpath="//button[normalize-space()='Brands']")
 	WebElement brands;
 
 	@FindBy(xpath="//a[normalize-space()='Apple']")
 	WebElement applemenu;
-	
+
 	@FindBy(xpath="(//a[@role='button'][normalize-space()='Mac'])[1]")
 	WebElement applemac;
-	
+
 	@FindBy(xpath="//a[normalize-space()='MacBook Air']")
 	WebElement macbook;
-	
+
 	@FindBy(xpath="(//button[@type='button'][normalize-space()='Add to Cart'])[1]")
 	WebElement addtocart;
-	
+
 	@FindBy(xpath="(//a[normalize-space()='Go to Cart'])[1]")
 	WebElement gotocart;
-	
+
 	@FindBy(xpath="(//button[normalize-space()='Checkout'])[1]")
 	WebElement checkout;
-	
+
 	@FindBy(xpath="(//button[normalize-space()='Continue as Guest'])[1]")
 	WebElement guest;
-	
+
 	@FindBy(xpath="(//input[@id='user.emailAddress'])[1]")
 	WebElement email;
-	
+
 	@FindBy(xpath="(//input[@id='user.phone'])[1]")
 	WebElement phone;
 
 	@FindBy(xpath="(//span[normalize-space()='Continue to Payment Information'])[1]")
 	WebElement payment;
-	
-	
-	
-	
+
+
+
+
 	@Test(dataProvider = "exceldataOne")
 	public void logindetails(String Email, String Mobile) throws InterruptedException {
 		PageFactory.initElements(driver, this);
@@ -88,8 +88,8 @@ public class BBloginpage extends BBpagemethods {
 		Thread.sleep(5000);
 		shopping.click();
 		menu02.click();
-			brands.click();
-			test.log(Status.PASS, "Brands menu selected");
+		brands.click();
+		test.log(Status.PASS, "Brands menu selected");
 		applemenu.click();
 		test.log(Status.PASS, "Apple products selected");
 		applemac.click();
@@ -108,6 +108,6 @@ public class BBloginpage extends BBpagemethods {
 		phone.sendKeys(Mobile);
 		test.log(Status.PASS, "Mobile no. entered");
 		payment.click();
-				
-}
+
+	}
 }

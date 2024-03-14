@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="pages.BBloginpage">
+      <class name="pages.SJBookingpage">
         <methods>
-          <include name="firstmethod"/>
           <include name="lastmethod"/>
-          <include name="logindetails" invocation-numbers="0"/>
           <include name="beforesuite"/>
+          <include name="firstmethod"/>
+          <include name="logindetails" invocation-numbers="0"/>
         </methods>
-      </class> <!-- pages.BBloginpage -->
+      </class> <!-- pages.SJBookingpage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
